@@ -39,8 +39,7 @@ public class FileMergeSort {
 	 */
 	public void mergeAndSortFiles(String inputDirectoryPath, String outputFileDirectory, String tempDirectoryPath, boolean removeDiplicates)
 			throws Exception {
-		String tempSplitDirectoryPath = tempDirectoryPath + "/split";
-		long start = System.currentTimeMillis();
+		String tempSplitDirectoryPath = tempDirectoryPath + "\\split";
 		try {
 			mergeAndSortFilesSetup(outputFileDirectory);
 			List<Path> inputFilePaths = listFilesFromDirectory(inputDirectoryPath);
@@ -56,9 +55,6 @@ public class FileMergeSort {
 		} finally {
 			cleanUp(tempDirectoryPath, tempSplitDirectoryPath);
 		}
-		long end = System.currentTimeMillis();
-		long diff = end - start;
-		System.out.println("Time :: " + diff);
 	}
 
 	/**
